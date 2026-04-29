@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopDrop - Best Deals Every Day</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- PROMO BAR -->
+  <!-- EDIT: Change promo text here -->
+  <div class="promo-bar">
+    🔥 Free shipping on your first order · New deals added daily · 30-day returns
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <!-- EDIT: Change your store name here -->
+    <a href="#" class="logo">Shop<span>Drop</span></a>
+
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search for anything..." />
+      <button onclick="doSearch()">🔍 Search</button>
+    </div>
+
+    <div class="nav-right">
+      <a href="#">Sign In</a>
+      <a href="#">Orders</a>
+      <a href="#" class="cart-btn">
+        🛒 Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- CATEGORY BAR -->
+  <!-- EDIT: Add or remove category links -->
+  <div class="cat-bar">
+    <a href="#" class="active">All</a>
+    <a href="#">Women's Fashion</a>
+    <a href="#">Men's Fashion</a>
+    <a href="#">Electronics</a>
+    <a href="#">Home & Garden</a>
+    <a href="#">Beauty</a>
+    <a href="#">Toys & Games</a>
+    <a href="#">Sports</a>
+    <a href="#">Bags</a>
+    <a href="#">Jewelry</a>
+    <a href="#">Pet Supplies</a>
+  </div>
+
+  <!-- HERO BANNER -->
+  <!-- EDIT: Change headline, subtext, and button links -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">🔥 Mega Sale — Limited Time</div>
+      <h1>Up to 90% Off Top Brands</h1>
+      <p>Millions of products. Unbeatable prices. Delivered fast to your door.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-white">Shop Now</a>
+        <a href="#" class="btn-outline">View Deals</a>
+      </div>
+    </div>
+    <div class="hero-right">🛍️</div>
+  </section>
+
+  <!-- CATEGORY ICONS -->
+  <!-- EDIT: Change emoji and label for each category -->
+  <div class="sec-head">
+    <h2><span class="dot"></span> Browse Categories</h2>
+    <a href="#">View All →</a>
+  </div>
+
+  <div class="icon-grid">
+    <div class="icon-card"><div class="icon">👗</div><span>Fashion</span></div>
+    <div class="icon-card"><div class="icon">📱</div><span>Electronics</span></div>
+    <div class="icon-card"><div class="icon">🏠</div><span>Home</span></div>
+    <div class="icon-card"><div class="icon">💄</div><span>Beauty</span></div>
+    <div class="icon-card"><div class="icon">🧸</div><span>Toys</span></div>
+    <div class="icon-card"><div class="icon">⌚</div><span>Watches</span></div>
+    <div class="icon-card"><div class="icon">👟</div><span>Shoes</span></div>
+    <div class="icon-card"><div class="icon">🎮</div><span>Gaming</span></div>
+  </div>
+
+  <!-- FLASH DEALS TIMER -->
+  <div class="flash-bar">
+    <div class="flash-bar-left">
+      <div>
+        <h3>⚡ Flash Deals</h3>
+        <p>Ends in:</p>
+      </div>
+      <div class="timer">
+        <div class="timer-block" id="hours">06</div>
+        <span class="timer-sep">:</span>
+        <div class="timer-block" id="mins">30</div>
+        <span class="timer-sep">:</span>
+        <div class="timer-block" id="secs">00</div>
+      </div>
+    </div>
+    <div class="flash-bar-right">
+      <a href="#">See All Deals →</a>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <!-- EDIT: Copy a product-card block to add more products -->
+  <div class="sec-head" id="products">
+    <h2><span class="dot"></span> Recommended For You</h2>
+    <a href="#">See All →</a>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <div class="product-card" data-name="Wireless Earbuds Pro">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?auto=format&fit=crop&w=600&q=80)" alt="Wireless Earbuds Pro"/>
+        <span class="p-badge">-60%</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Wireless Earbuds Pro — Noise Cancelling</h3>
+        <div class="p-stars">★★★★★ <span>4.9 (3.2k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$11.99</span>
+          <span class="p-old">$29.99</span>
+          <span class="p-discount">-60%</span>
+        </div>
+        <div class="p-sold">🔥 2,847 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:78%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Smart Watch Series X">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80)" alt="Smart Watch"/>
+        <span class="p-badge hot">🔥 Hot</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Smart Watch Series X — GPS + Health Track</h3>
+        <div class="p-stars">★★★★☆ <span>4.7 (1.8k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$19.99</span>
+          <span class="p-old">$54.99</span>
+          <span class="p-discount">-64%</span>
+        </div>
+        <div class="p-sold">🔥 5,201 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:92%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="LED Desk Lamp">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80)" alt="LED Desk Lamp"/>
+        <span class="p-badge new">New</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>LED Desk Lamp — Touch Dimmer 5 Modes</h3>
+        <div class="p-stars">★★★★★ <span>4.9 (987)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$8.50</span>
+          <span class="p-old">$19.99</span>
+          <span class="p-discount">-57%</span>
+        </div>
+        <div class="p-sold">1,234 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:55%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Casual Sneakers">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80)" alt="Sneakers"/>
+        <span class="p-badge">-30%</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Casual Sneakers — Unisex Lightweight</h3>
+        <div class="p-stars">★★★★☆ <span>4.6 (4.1k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$22.99</span>
+          <span class="p-old">$32.99</span>
+          <span class="p-discount">-30%</span>
+        </div>
+        <div class="p-sold">🔥 8,900 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:88%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Kitchen Organizer Set">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80)" alt="Kitchen Organizer"/>
+        <span class="p-badge">Deal</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Kitchen Organizer Set — 5 Piece Bamboo</h3>
+        <div class="p-stars">★★★★★ <span>4.8 (2.5k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$9.99</span>
+          <span class="p-old">$24.00</span>
+          <span class="p-discount">-58%</span>
+        </div>
+        <div class="p-sold">3,677 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:65%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Makeup Brush Set">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80)" alt="Makeup Set"/>
+        <span class="p-badge hot">🔥 Hot</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Pro Makeup Brush Set — 12pcs Rose Gold</h3>
+        <div class="p-stars">★★★★☆ <span>4.5 (6.7k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$14.49</span>
+          <span class="p-old">$36.00</span>
+          <span class="p-discount">-60%</span>
+        </div>
+        <div class="p-sold">🔥 12,400 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:96%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Portable Blender">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1570222094114-d054a817e56b?auto=format&fit=crop&w=600&q=80)" alt="Portable Blender"/>
+        <span class="p-badge new">New</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Portable Blender — USB Rechargeable 350ml</h3>
+        <div class="p-stars">★★★★★ <span>4.8 (1.1k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$16.99</span>
+          <span class="p-old">$38.00</span>
+          <span class="p-discount">-55%</span>
+        </div>
+        <div class="p-sold">788 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:42%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-name="Yoga Mat Premium">
+      <div class="p-img-wrap">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=600&q=80)" alt="Yoga Mat"/>
+        <span class="p-badge">-40%</span>
+        <button class="p-wishlist" onclick="toggleWish(this)">🤍</button>
+      </div>
+      <div class="p-body">
+        <h3>Premium Yoga Mat — Non-slip 6mm Thick</h3>
+        <div class="p-stars">★★★★★ <span>4.9 (3.9k)</span></div>
+        <div class="p-price-row">
+          <span class="p-price">$18.99</span>
+          <span class="p-old">$31.99</span>
+          <span class="p-discount">-41%</span>
+        </div>
+        <div class="p-sold">🔥 4,560 sold</div>
+        <div class="p-sold-bar"><div class="p-sold-bar-fill" style="width:82%"></div></div>
+        <button class="p-add-btn" onclick="addToCart(this)">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PROMO BANNERS -->
+  <div class="banner-strip">
+    <div class="b-card b1">
+      <h3>New Arrivals</h3>
+      <p>Fresh styles added every week — be the first to grab them.</p>
+      <a href="#">Shop Now</a>
+      <div class="b-icon">✨</div>
+    </div>
+    <div class="b-card b2">
+      <h3>Tech Deals</h3>
+      <p>Gadgets, accessories, and electronics at crazy low prices.</p>
+      <a href="#">Explore</a>
+      <div class="b-icon">⚡</div>
+    </div>
+    <div class="b-card b3">
+      <h3>Refer & Earn</h3>
+      <p>Invite friends and earn $10 credit for every referral.</p>
+      <a href="#">Learn More</a>
+      <div class="b-icon">🎁</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- EDIT: Update links, store name, and social icons -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Shop<span class="footer-logo-alt">Drop</span></a>
+        <p>ShopDrop connects millions of shoppers with affordable, quality products worldwide. Fast shipping, easy returns, and new deals every single day.</p>
+        <div class="footer-social">
+          <a href="#">📘</a>
+          <a href="#">📸</a>
+          <a href="#">🐦</a>
+          <a href="#">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Track Order</a>
+        <a href="#">Returns</a>
+        <a href="#">Shipping Info</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+        <a href="#">Affiliates</a>
+        <a href="#">Sell on ShopDrop</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ShopDrop. All rights reserved.</span>
+      <div class="payment-icons">
+        <span class="pay-icon">VISA</span>
+        <span class="pay-icon">MC</span>
+        <span class="pay-icon">PayPal</span>
+        <span class="pay-icon">Apple Pay</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">✅ Added to cart!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
